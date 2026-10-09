@@ -1,9 +1,9 @@
 
 /*
   CHATAPP - SUPABASE CONNECTION
-
-  Replace the two configuration values below
-  with your own Supabase project URL and publishable key.
+const SUPABASE_URL = "https://islqlozermvbxvndxhll.supabase.co";
+const SUPABASE_KEY = "sb_publishable_VPnpn1gyreQ9DNvOfwp5mA_w-yaRQZ-"
+ 
 */
 
 const SUPABASE_URL = "https://islqlozermvbxvndxhll.supabase.co";
