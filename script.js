@@ -7,7 +7,7 @@ const SUPABASE_KEY = "sb_publishable_VPnpn1gyreQ9DNvOfwp5mA_w-yaRQZ-";
 
 // IMPORTANT: Replace this with your real GitHub Pages website URL.
 // Example: https://YOUR-USERNAME.github.io/Techssoft-group-chatApp/
-const GITHUB_PAGES_URL = "https://aakashanandanofficial.github.io/Techssoft-group-chatApp/";
+const GITHUB_PAGES_URL = "https://aakashanandanoofficial.github.io/Techssoft-group-chatApp/";
 
 const db = window.supabase.createClient(
   SUPABASE_URL,
@@ -452,7 +452,7 @@ async function initializeApp() {
       return;
     }
 
-    if (GITHUB_PAGES_URL === "https://aakashanandanofficial.github.io/Techssoft-group-chatApp/") {
+    if (GITHUB_PAGES_URL === "https://aakashanandanoofficial.github.io/Techssoft-group-chatApp/") {
       showLogin();
       showAuthMessage(
         "Add your GitHub Pages URL in script.js before signing up."
