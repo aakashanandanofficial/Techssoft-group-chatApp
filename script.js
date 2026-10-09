@@ -7,7 +7,7 @@ const SUPABASE_KEY = "sb_publishable_VPnpn1gyreQ9DNvOfwp5mA_w-yaRQZ-";
 
 // IMPORTANT: Replace this with your real GitHub Pages website URL.
 // Example: https://YOUR-USERNAME.github.io/Techssoft-group-chatApp/
-const GITHUB_PAGES_URL = "YOUR_GITHUB_PAGES_URL";
+const GITHUB_PAGES_URL = "https://aakashanandanofficial.github.io/Techssoft-group-chatApp/";
 
 const db = window.supabase.createClient(
   SUPABASE_URL,
