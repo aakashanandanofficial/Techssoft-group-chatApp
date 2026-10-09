@@ -1,88 +1,113 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ChatApp</title>
+  <meta name="theme-color" content="#075e54">
+  <meta name="description" content="Techssoft Group Chat App">
+  <title>Techssoft Group Chat</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="script.js" defer></script>
 </head>
 <body>
-  <main class="app">
-    <section id="authPanel" class="auth-panel">
-      <div class="brand">
-        <span class="brand-icon">☎</span>
-        <h1>Techssoft group chatApp</h1>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="brand-icon">T</div>
+      <div>
+        <h1>Techssoft Group Chat</h1>
+        <p>Connect. Chat. Collaborate.</p>
       </div>
+    </header>
 
-      <h2 id="authTitle">Welcome back</h2>
-      <p class="muted">Sign in to join the chat.</p>
+    <main class="main-content">
+      <section id="authPanel" class="auth-card">
+        <div class="welcome-icon">💬</div>
+        <h2 id="authTitle">Welcome back</h2>
+        <p class="muted">Sign in or create an account to join the conversation.</p>
 
-      <form id="authForm">
-        <label for="email">Email address</label>
-        <input id="email" type="email" required
-          placeholder="you@example.com" autocomplete="email">
+        <form id="authForm">
+          <label for="email">Email address</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          >
 
-        <label for="password">Password</label>
-        <input id="password" type="password" required
-          minlength="6" placeholder="At least 6 characters"
-          autocomplete="current-password">
+          <label for="password">Password</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            placeholder="Enter your password"
+            autocomplete="current-password"
+            minlength="6"
+            required
+          >
 
-        <button id="authButton" type="submit">Sign in</button>
-      </form>
+          <button id="authButton" class="primary-button" type="submit">
+            Sign in
+          </button>
+          <p id="authMessage" class="auth-message" role="status" aria-live="polite"></p>
+        </form>
 
-      <p id="authMessage" class="notice" role="status"></p>
-
-      <p class="switch-auth">
-        <span id="switchText">Don't have an account?</span>
-        <button id="switchAuth" type="button">Sign up</button>
-      </p>
-    </section>
-
-    <section id="chatPanel" class="chat-panel" hidden>
-      <header class="topbar">
-        <div class="brand">
-          <span class="brand-icon">☎</span>
-          <div>
-            <h1>ChatApp</h1>
-            <p class="muted">Shared group chat</p>
-          </div>
-        </div>
-        <button id="signOutButton" class="secondary-button">
-          Sign out
-        </button>
-      </header>
-
-      <div class="room-heading">
-        <div>
-          <h2>Community Chat</h2>
-          <p class="muted">Messages from signed-in users</p>
-        </div>
-        <span class="online-dot">● Live</span>
-      </div>
-
-      <div id="status" class="status" role="status">
-        Connecting to chat…
-      </div>
-
-      <section id="messages" class="messages"
-        aria-label="Chat messages" aria-live="polite">
+        <p class="switch-line">
+          <span id="switchText">Don't have an account?</span>
+          <button id="switchAuth" class="text-button" type="button">Sign up</button>
+        </p>
       </section>
 
-      <form id="messageForm" class="composer">
-        <input id="messageInput" type="text"
-          placeholder="Type a message..."
-          maxlength="2000" autocomplete="off" required>
-        <button id="sendButton" type="submit"
-          aria-label="Send message">➤</button>
-      </form>
+      <section id="chatPanel" class="chat-card" hidden>
+        <div class="chat-heading">
+          <div>
+            <h2>Community Chat</h2>
+            <p class="muted">Messages are shared with signed-in members.</p>
+          </div>
+          <button id="signOutButton" class="secondary-button" type="button">
+            Sign out
+          </button>
+        </div>
 
-      <p class="footer-note">
-        Starter project — messages are not end-to-end encrypted.
-      </p>
-    </section>
-  </main>
+        <div id="status" class="status" role="status" aria-live="polite">
+          Connecting...
+        </div>
+
+        <div
+          id="messages"
+          class="messages"
+          role="log"
+          aria-label="Chat messages"
+          aria-live="polite"
+          aria-relevant="additions"
+        >
+          <p class="empty-state">Your messages will appear here.</p>
+        </div>
+
+        <form id="messageForm" class="message-form">
+          <label class="visually-hidden" for="messageInput">Your message</label>
+          <input
+            id="messageInput"
+            name="message"
+            type="text"
+            maxlength="2000"
+            placeholder="Type a message..."
+            autocomplete="off"
+            required
+          >
+          <button id="sendButton" class="primary-button send-button" type="submit">
+            Send
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>Techssoft Group Chat &copy; <span id="year"></span></p>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
 </body>
 </html>
