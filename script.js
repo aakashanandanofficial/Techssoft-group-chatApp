@@ -452,7 +452,7 @@ async function initializeApp() {
       return;
     }
 
-    if (GITHUB_PAGES_URL === "https://github.com/aakashanandanofficial/Techssoft-group-chatApp/edit/main/script.js") {
+    if (GITHUB_PAGES_URL === "") {
       showLogin();
       showAuthMessage(
         "Add your GitHub Pages URL in script.js before signing up."
